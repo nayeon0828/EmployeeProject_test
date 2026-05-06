@@ -28,6 +28,10 @@ public class HandlerMapping {
                 controller = new UpdateController();
                 break;
 
+            case 4:
+                controller = new SearchForNameController();
+                break;
+
 
             case 5:
                 controller = new PrintAllController();

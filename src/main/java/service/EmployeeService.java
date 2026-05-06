@@ -127,12 +127,13 @@ public class EmployeeService {
             if(vo.getName().indexOf(name) != -1) //검색 결과가 있으면 result에 추가
                 result.add(vo);
         }
+        //if(result.size()==0)과 같은 의미 -> 데이터 값이 비었는지 없는지 확인 유무
         if(result.isEmpty())
             throw  new EmployeeException("검색 결과가 없습니다.");
         return result;
 
-//        list.stream().filter(item -> item.getName().indexOf(name) != -1).collect(Collectors.toList());
-//        return result;
+//        List<EmployeeVO> rList = list.stream().filter(item -> item.getName().indexOf(name) != -1).collect(Collectors.toList());
+//        return rList;
 
 
     }
