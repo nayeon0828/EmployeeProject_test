@@ -1,6 +1,7 @@
-emp001,김철수, Manager,5500,2021-03-15
-emp002,이영희, Developer,4800,2022-07-01
-emp003,박지민, Designer,4200,2023-01-20
-emp004,최현우, Intern,3000,2024-02-12
-emp005,한소희, Developer,5200,2020-11-10
-emp006,정재윤, Analyst,4600,2022-05-25
+id,name,postion,salary,hireDate
+emp001,김철수,Manager,5500,2021-03-15
+emp002,이영희,Developer,4800,2022-07-01
+emp003,박지민,Designer,4200,2023-01-20
+emp004,최현우,Intern,3000,2024-02-12
+emp005,한소희,Developer,5200,2020-11-10
+emp006,정재윤,Analyst,4600,2022-05-25

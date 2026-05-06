@@ -24,6 +24,10 @@ public class HandlerMapping {
                 controller = new DeleteController();
                 break;
 
+            case 3:
+                controller = new UpdateController();
+                break;
+
 
             case 5:
                 controller = new PrintAllController();

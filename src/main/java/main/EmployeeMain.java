@@ -19,7 +19,7 @@ public class EmployeeMain {
             System.out.println("1. 사원 정보 등록");
             System.out.println("2. 사원 정보 삭제");
             System.out.println("3. 사원 정보 수정");
-            System.out.println("4. 사원 정보 검색 (사번)");
+            System.out.println("4. 사원 정보 검색 (이름)");
             System.out.println("5. 전체 사원 조회");
             System.out.println("0. 프로그램 종료");
             System.out.print("원하시는 번호 입력 :");

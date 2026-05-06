@@ -5,6 +5,7 @@ import vo.EmployeeVO;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class EmployeeService {
 
@@ -99,8 +100,41 @@ public class EmployeeService {
     /************사원 정보 삭제하기 **************/
     public void deleteEmployee(String id) throws EmployeeException {
 
+        //indexof()로 인덱스값 뽑아서 삭제하지 않고, 다이렉트로 객체를 삭제하기 위해서
         if(!list.remove(new EmployeeVO(id, null, null,0, null)))
             throw new EmployeeException("삭제할 사원 정보가 없습니다.");
 
     }
+
+    /************사원 정보 수정하기 **************/
+
+    //회원 정보 찾아서 리턴하는 메서드 만들기
+    public EmployeeVO searchEmployee(String id) throws EmployeeException {
+        int idx = list.indexOf(new EmployeeVO(id, null, null,0,null));
+
+        if(idx == -1 ) throw new EmployeeException("해당 사원 정보가 없습니다.");
+        return list.get(idx);
+
+
+    }
+
+    /************사원 정보 이름으로 검색 **************/
+
+    public ArrayList<EmployeeVO> searchForNameEmployee(String name) throws EmployeeException {
+        ArrayList<EmployeeVO> result = new ArrayList<EmployeeVO>();
+
+        for(EmployeeVO vo : list){
+            if(vo.getName().indexOf(name) != -1) //검색 결과가 있으면 result에 추가
+                result.add(vo);
+        }
+        if(result.isEmpty())
+            throw  new EmployeeException("검색 결과가 없습니다.");
+        return result;
+
+//        list.stream().filter(item -> item.getName().indexOf(name) != -1).collect(Collectors.toList());
+//        return result;
+
+
+    }
+
 }
