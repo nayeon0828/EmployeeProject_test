@@ -61,13 +61,8 @@ public class EmployeeVO {
 
     @Override
     public String toString() {
-        return "EmployeeVO{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", postion='" + postion + '\'' +
-                ", salary=" + salary +
-                ", hireDate='" + hireDate + '\'' +
-                '}';
+        //배열에 넣을때 , 쉼표 기준으로 나눴기에
+        return id + ","+ name + ", "+ postion + "," + salary + "," + hireDate;
     }
 
 
