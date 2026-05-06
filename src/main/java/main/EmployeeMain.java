@@ -2,6 +2,7 @@ package main;
 
 import controller.Controller;
 import controller.HandlerMapping;
+import service.EmployeeService;
 
 import java.util.Scanner;
 
@@ -9,6 +10,8 @@ public class EmployeeMain {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        try{
 
         while (true){
 
@@ -34,6 +37,11 @@ public class EmployeeMain {
                 break;
             }
 
+        }
+
+
+        }finally {
+            EmployeeService.getInstance().exportTocsv();
         }
 
 
