@@ -67,12 +67,14 @@ public class EmployeeService {
         int idx = list.indexOf(new EmployeeVO(id,null,null,0,null));
 
         //중복되면 0이상 나옴
+        // -1이면 중복이 아님
         if(idx != -1)
             throw  new EmployeeException("사원번호가 중복되었습니다.");
 
 
     }
 
+    /************사원 정보 추가 메서드**************/
     public boolean appendEmployee(EmployeeVO employeeVO) {
         return list.add(employeeVO);
 
@@ -94,8 +96,11 @@ public class EmployeeService {
 
     }
 
+    /************사원 정보 삭제하기 **************/
+    public void deleteEmployee(String id) throws EmployeeException {
 
+        if(!list.remove(new EmployeeVO(id, null, null,0, null)))
+            throw new EmployeeException("삭제할 사원 정보가 없습니다.");
 
-
-
+    }
 }
